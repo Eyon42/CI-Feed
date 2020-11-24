@@ -25,7 +25,7 @@ SECRET_KEY = 'f2_=8$qjl1wje0_y__#zm6t=do=t_1y-tw4b&_0p$jyac^!xrt'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["ci-feed.herokuapp.com"]
 
 
 # Application definition
