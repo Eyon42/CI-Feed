@@ -1,1 +1,1 @@
-web: gunicorn CIFeed.wsgi
+web: gunicorn CIFeed.wsgi --log-file -

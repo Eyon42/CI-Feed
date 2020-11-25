@@ -25,7 +25,7 @@ SECRET_KEY = 'f2_=8$qjl1wje0_y__#zm6t=do=t_1y-tw4b&_0p$jyac^!xrt'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["ci-feed.herokuapp.com"]
+ALLOWED_HOSTS = ["ci-feed.herokuapp.com", "127.0.0.1"]
 
 
 # Application definition
@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'CIFeed.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3')
     }
 }
 
@@ -116,5 +116,13 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-
+# https://dev.to/fazledyn/deploying-django-3-1-on-heroku-417
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILE_DIRS = [
+      "static/images", 
+      "static/css", 
+      "staticfiles",]
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
