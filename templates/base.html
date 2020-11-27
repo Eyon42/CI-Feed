@@ -1,11 +1,12 @@
 {% load static %}
 
 <!doctype html>
-<html class="no-js" lang="">
+<html>
 
 <head>
   <meta charset="utf-8">
   <title>{% block title %}CI Feed{% endblock %}</title>
+
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -15,17 +16,22 @@
   <meta property="og:image" content="">
 
   <link rel="stylesheet" href="{% static "css/normalize.css" %}">
-  <link rel="stylesheet" href="{% static "css/main.css" %}">
+  <link rel="stylesheet" href="{% static "css/main.css" %}?{% now "U" %}">
+  <!---
+    I need to avoid the browser caching my stylesheets.
+    This is a developement solution, there's a different solution in the S.O. thread for production.
+  https://stackoverflow.com/questions/3188544/django-css-file-cached
+  --->
   <meta name="theme-color" content="#f8f9fA">
+
+  
 
 </head>
 
 <body>
-  <div id="main-container">
+  <div id="wrapper">
 
-    <div id="sidebar">
-      {% include "sidebar.html" %}
-    </div>
+    {% include "sidebar.html" %}
 
     <div id="content">
       {% block content %}

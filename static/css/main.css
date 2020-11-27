@@ -261,7 +261,16 @@ textarea {
   }
 }
 
+#wrapper
+{
+  margin: 0;
+  display: flex;
+  height: 100%;
+  position: absolute;
+}
+
 #sidebar
 {
-  background-color: red;
+  background-color: #EBEBEB;
+  height: 100%;
 }
